@@ -1,0 +1,21 @@
+<!-- src/app/app.component.html -->
+
+<!-- Title -->
+<div style="text-align: center; font-size: 2.5rem; padding: 1rem; background-color: #cce5ff; color: #004085; font-weight: bold;">
+  Smart Education
+</div>
+
+<!-- Navigation Bar -->
+<nav style="background-color: #007bff; padding: 1rem; color: white;">
+  <a routerLink="/" style="margin-right: 1rem; color: white;">Home</a>
+  <a routerLink="/signup" style="margin-right: 1rem; color: white;">Signup</a>
+  <a routerLink="/login" style="margin-right: 1rem; color: white;">Login</a>
+  <a routerLink="/about" style="margin-right: 1rem; color: white;">About</a>
+  <a routerLink="/courses" style="margin-right: 1rem; color: white;">Courses</a>
+ <!--- <a routerLink="/quiz" style="margin-right: 1rem; color: white;">Quiz</a> --->
+  <a routerLink="/enrollment" style="margin-right: 1rem; color: white;">Enrolled</a>
+  <!--<a routerLink="/contact" style="color: white;">Contact</a>-->
+</nav>
+
+<!-- Router outlet for child pages -->
+<router-outlet></router-outlet>

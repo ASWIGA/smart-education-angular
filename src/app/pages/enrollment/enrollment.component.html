@@ -1,0 +1,14 @@
+<div class="enrollment-container">
+  <h2>Your Enrolled Courses</h2>
+
+  <div *ngIf="enrolledCourses.length === 0">
+    <p>You have not enrolled in any courses yet.</p>
+  </div>
+
+  <div *ngFor="let course of enrolledCourses" class="course-card">
+    <h3>{{ course.title }}</h3>
+    <p>{{ course.description }}</p>
+    <a [href]="course.materialUrl" download>📄 Download Material</a><br />
+    <a [href]="course.youtubeLink" target="_blank">▶️ Watch on YouTube</a>
+  </div>
+</div>

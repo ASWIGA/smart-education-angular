@@ -1,0 +1,26 @@
+<div *ngIf="selectedSubjects.length > 0">
+  <h2>Quiz on {{ selectedSubjects[currentSubjectIndex] }}</h2>
+
+  <button (click)="startQuiz()" [disabled]="quizStarted">Start Quiz</button>
+
+  <div *ngIf="quizStarted">
+    <div *ngIf="questions[selectedSubjects[currentSubjectIndex]].length > 0">
+      <p>
+        {{ questions[selectedSubjects[currentSubjectIndex]][currentQuestionIndex].question }}
+      </p>
+      <div *ngFor="let option of questions[selectedSubjects[currentSubjectIndex]][currentQuestionIndex].options">
+        <label>
+          <input
+            type="radio"
+            [name]="currentSubjectIndex + '-' + currentQuestionIndex"
+            (change)="submitAnswer(selectedSubjects[currentSubjectIndex], currentQuestionIndex, option)"
+          />
+          {{ option }}
+        </label>
+      </div>
+    </div>
+
+    <button (click)="nextQuestion()">Next Question</button>
+  </div>
+</div>
+

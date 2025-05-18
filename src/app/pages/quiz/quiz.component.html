@@ -1,0 +1,20 @@
+<div class="quiz-title">
+  <h1>Select 5 Subjects for the Quiz</h1>
+</div>
+
+<div class="subjects-list">
+  <div *ngFor="let subject of subjects">
+    <label>
+      <input
+        type="checkbox"
+        [checked]="selectedSubjects.includes(subject.title)"
+        (change)="toggleSubject(subject.title)"
+      />
+      {{ subject.title }}
+    </label>
+  </div>
+</div>
+
+<button (click)="startQuiz()" [disabled]="selectedSubjects.length !== 5">
+  Start Quiz
+</button>
